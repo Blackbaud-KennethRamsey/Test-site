@@ -31,6 +31,23 @@
 </div>
 <!-- End form embed -->
 
+<script>
+  // this sets the params to go to local version of reg-form-spa.
+  // could manually paste it, but this is cooler.
+  var main = document.getElementById("main");
+  console.log(main);
   
+  // add this if you want to use a query param.
+  var cfgFromQuery = new URLSearchParams(window.location.search).get("_cfgbr");
+  var makeLocal = "&local=true";
+
+  if (cfgFromQuery) {
+    var val = encodeURIComponent(cfgFromQuery);
+    makeLocal += "&_cfgbr =" + val;
+    console.log("added query param _cfgbr: " + val);
+    main.dataset.blackbaudRegistrationFormZone += makeLocal;
+  }
+
+</script>
 </body>
 </html>
