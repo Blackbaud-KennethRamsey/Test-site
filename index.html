@@ -17,6 +17,7 @@
   Otherwise, multiple copies of the form will appear.
 -->
 <div
+  id="main"
   data-blackbaud-registration-form
   data-blackbaud-registration-form-envid="t-i1-iatLcg0iZRcXyffk_eA"
   data-blackbaud-registration-form-id="1cef4771-b0a9-49eb-86ad-a65e8d363eda"
@@ -39,11 +40,9 @@
   
   // add this if you want to use a query param.
   var cfgFromQuery = new URLSearchParams(window.location.search).get("_cfgbr");
-  var makeLocal = "&local=true";
-
   if (cfgFromQuery) {
     var val = encodeURIComponent(cfgFromQuery);
-    makeLocal += "&_cfgbr =" + val;
+    var makeLocal = "&local=true&_cfgbr =" + val;
     console.log("added query param _cfgbr: " + val);
     main.dataset.blackbaudRegistrationFormZone += makeLocal;
   }
