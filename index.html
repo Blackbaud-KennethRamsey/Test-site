@@ -42,7 +42,7 @@
   var cfgFromQuery = new URLSearchParams(window.location.search).get("_cfgbr");
   if (cfgFromQuery) {
     var val = encodeURIComponent(cfgFromQuery);
-    var makeLocal = "&local=true&_cfgbr =" + val;
+    var makeLocal = "&local=true&_cfgbr=" + val;
     console.log("added query param _cfgbr: " + val);
     main.dataset.blackbaudRegistrationFormZone += makeLocal;
   }
